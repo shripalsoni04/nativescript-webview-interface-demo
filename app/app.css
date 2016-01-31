@@ -1,0 +1,19 @@
+﻿.container{
+    padding: 20;    
+}
+
+.heading-main{
+    font-size: 20;
+    padding: 10 0;
+    color: blue;    
+}
+
+.heading-sub{
+    font-size: 16;
+    padding-top: 20;
+}
+
+.actionBtn{
+    font-size: 14;
+    horizontal-align: left;
+}

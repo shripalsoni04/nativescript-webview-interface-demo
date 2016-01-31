@@ -1,0 +1,17 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
+  <StackLayout cssClass="container">
+        <Label text="WebView" cssClass="heading-main"></Label>
+        <GridLayout rows="50" columns="*">
+            <web-view id="webView" src="~/www/index.html"></web-view>    
+        </GridLayout>
+        <Label text="Native" cssClass="heading-main"></Label>
+        <GridLayout rows="50" columns="*, 70">
+                <TextField id="txtLanguage" col="0" hint="Language" />
+                <Button col="1" text="Add" tap="addLanguage" />
+        </GridLayout>
+        <Label text="Selected Language In Webview:" textWrap="true" cssClass="heading-sub" />
+        <Label text="{{selectedLanguage}}" textWrap="true" style="padding: 5 0 20;"/> 
+        <Button text="Selected Language" tap="getSelectedLanguage" cssClass="actionBtn" />
+        <Button text="Selected Language Differed By 2s" tap="getSelectedLanguageDiffered" cssClass="actionBtn" />
+  </StackLayout>
+</Page>
