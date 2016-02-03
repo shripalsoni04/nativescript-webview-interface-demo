@@ -12,6 +12,6 @@
         <Label text="Selected Language In Webview:" textWrap="true" cssClass="heading-sub" />
         <Label text="{{selectedLanguage}}" textWrap="true" style="padding: 5 0 20;"/> 
         <Button text="Selected Language" tap="getSelectedLanguage" cssClass="actionBtn" />
-        <Button text="Selected Language Differed By 2s" tap="getSelectedLanguageDiffered" cssClass="actionBtn" />
+        <Button text="Selected Language Deferred By 2s" tap="getSelectedLanguageDeferred" cssClass="actionBtn" />
   </StackLayout>
 </Page>

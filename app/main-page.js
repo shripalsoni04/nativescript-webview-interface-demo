@@ -58,11 +58,11 @@ function getSelectedLanguage() {
 exports.getSelectedLanguage = getSelectedLanguage;
 /**
  * Fetches currently selected language of dropdown in webview.
- * The result will come after 2s. This function is written to show the support of differred result.
+ * The result will come after 2s. This function is written to show the support of deferred result.
  */
-function getSelectedLanguageDiffered() {
-    oLangWebViewInterface.callJSFunction('getSelectedLanguageDiffered', null, function (oSelectedLang) {
-        dialogs_1.alert("Differed Selected Language is " + oSelectedLang.text);
+function getSelectedLanguageDeferred() {
+    oLangWebViewInterface.callJSFunction('getSelectedLanguageDeferred', null, function (oSelectedLang) {
+        dialogs_1.alert("Deferred Selected Language is " + oSelectedLang.text);
     });
 }
-exports.getSelectedLanguageDiffered = getSelectedLanguageDiffered;
+exports.getSelectedLanguageDeferred = getSelectedLanguageDeferred;

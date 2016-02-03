@@ -1,5 +1,5 @@
 # Demo App For Nativescript-WebView-Interface Plugin
-Demo application for [nativescript-webview-interface](https://github.com/shripalsoni04/nativescript-webview-interface) plugin.
+Demo application for [nativescript-webview-interface](https://github.com/shripalsoni04/nativescript-webview-interface) plugin. Check detailed [blog post](http://shripalsoni.com/blog/nativescript-webview-native-bi-directional-communication/) for this demo application.
 
 # Installation
 This app is built with the [NativeScript CLI](https://github.com/NativeScript/nativescript-cli).

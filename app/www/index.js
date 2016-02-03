@@ -28,7 +28,7 @@
             return {id: selectedLangOpt.value, text: selectedLangOpt.text};
         };
         
-        window.getSelectedLanguageDiffered = function(){
+        window.getSelectedLanguageDeferred = function(){
             var selectedLangOpt = languageDD.options[languageDD.selectedIndex];
             return new Promise(function(resolve) {
                 setTimeout(function(){
