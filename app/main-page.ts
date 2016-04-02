@@ -9,8 +9,22 @@ var oLangWebViewInterface;
 
 export function pageLoaded(args){
     page = <Page>args.object;
-    page.bindingContext = webViewInterfaceDemoVM;
-    setupWebViewInterface(page) 
+    page.bindingContext = webViewInterfaceDemoVM; 
+}
+
+/**
+ * Initializing webview only ater page navigation.
+ */
+export function navigatedTo(args){
+    setupWebViewInterface(page);
+}
+
+/**
+ * Clearing resource attached with webviewInterface on navigated from 
+ * this page to avoid memory leak.
+ */
+export function navigatedFrom(){
+     oLangWebViewInterface.destroy();   
 }
 
 /**
@@ -19,14 +33,14 @@ export function pageLoaded(args){
 function setupWebViewInterface(page: Page){
     var webView = <WebView>page.getViewById('webView');
     oLangWebViewInterface = new webViewInterfaceModule.WebViewInterface(webView);
-    
+
     // loading languages in dropdown, on load of webView.
     webView.on(WebView.loadFinishedEvent, (args: LoadEventData) => {
         if (!args.error) {
             loadLanguagesInWebView();
         }
     });
-    
+
     listenLangWebViewEvents();
 }
 

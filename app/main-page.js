@@ -7,9 +7,16 @@ var oLangWebViewInterface;
 function pageLoaded(args) {
     page = args.object;
     page.bindingContext = main_view_model_1.webViewInterfaceDemoVM;
-    setupWebViewInterface(page);
 }
 exports.pageLoaded = pageLoaded;
+function navigatedTo(args) {
+    setupWebViewInterface(page);
+}
+exports.navigatedTo = navigatedTo;
+function navigatedFrom() {
+    oLangWebViewInterface.destroy();
+}
+exports.navigatedFrom = navigatedFrom;
 /**
  * Initializes webViewInterface for communication between webview and android/ios
  */

@@ -9,7 +9,7 @@
     }
   },
   "dependencies": {
-    "nativescript-webview-interface": "^1.1.2",
+    "nativescript-webview-interface": "^1.2.0",
     "tns-core-modules": "^1.6.2"
   },
   "devDependencies": {

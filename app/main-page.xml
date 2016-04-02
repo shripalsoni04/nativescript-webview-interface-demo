@@ -1,4 +1,4 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded" navigatedTo="navigatedTo" navigatedFrom="navigatedFrom">
   <StackLayout cssClass="container">
         <Label text="WebView" cssClass="heading-main"></Label>
         <GridLayout rows="50" columns="*">
