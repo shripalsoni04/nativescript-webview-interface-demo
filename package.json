@@ -1,19 +1,19 @@
 {
-  "nativescript": {
-    "id": "org.nativescript.webviewinterfacedemo",
-    "tns-android": {
-      "version": "1.6.3"
-    },
-    "tns-ios": {
-      "version": "1.6.0"
-    }
-  },
-  "dependencies": {
-    "nativescript-webview-interface": "^1.2.0",
-    "tns-core-modules": "^1.6.2"
-  },
-  "devDependencies": {
-    "nativescript-dev-typescript": "^0.2.3",
-    "typescript": "^1.7.5"
-  }
+	"nativescript": {
+		"id": "org.nativescript.webviewinterfacedemo",
+		"tns-android": {
+			"version": "2.0.0"
+		},
+		"tns-ios": {
+			"version": "2.0.0"
+		}
+	},
+	"dependencies": {
+		"nativescript-webview-interface": "^1.2.0",
+		"tns-core-modules": "^2.0.1"
+	},
+	"devDependencies": {
+		"nativescript-dev-typescript": "^0.2.3",
+		"typescript": "^1.8.10"
+	}
 }
