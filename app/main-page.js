@@ -1,3 +1,4 @@
+"use strict";
 var web_view_1 = require('ui/web-view');
 var main_view_model_1 = require('./main-view-model');
 var dialogs_1 = require('ui/dialogs');
@@ -9,10 +10,17 @@ function pageLoaded(args) {
     page.bindingContext = main_view_model_1.webViewInterfaceDemoVM;
 }
 exports.pageLoaded = pageLoaded;
+/**
+ * Initializing webview only ater page navigation.
+ */
 function navigatedTo(args) {
     setupWebViewInterface(page);
 }
 exports.navigatedTo = navigatedTo;
+/**
+ * Clearing resource attached with webviewInterface on navigated from
+ * this page to avoid memory leak.
+ */
 function navigatedFrom() {
     oLangWebViewInterface.destroy();
 }
@@ -22,7 +30,7 @@ exports.navigatedFrom = navigatedFrom;
  */
 function setupWebViewInterface(page) {
     var webView = page.getViewById('webView');
-    oLangWebViewInterface = new webViewInterfaceModule.WebViewInterface(webView);
+    oLangWebViewInterface = new webViewInterfaceModule.WebViewInterface(webView, '~/www/index.html');
     // loading languages in dropdown, on load of webView.
     webView.on(web_view_1.WebView.loadFinishedEvent, function (args) {
         if (!args.error) {

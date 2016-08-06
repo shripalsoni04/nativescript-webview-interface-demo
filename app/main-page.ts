@@ -32,7 +32,7 @@ export function navigatedFrom(){
  */
 function setupWebViewInterface(page: Page){
     var webView = <WebView>page.getViewById('webView');
-    oLangWebViewInterface = new webViewInterfaceModule.WebViewInterface(webView);
+    oLangWebViewInterface = new webViewInterfaceModule.WebViewInterface(webView, '~/www/index.html');
 
     // loading languages in dropdown, on load of webView.
     webView.on(WebView.loadFinishedEvent, (args: LoadEventData) => {

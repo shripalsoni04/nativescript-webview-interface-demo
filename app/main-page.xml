@@ -2,7 +2,7 @@
   <StackLayout cssClass="container">
         <Label text="WebView" cssClass="heading-main"></Label>
         <GridLayout rows="50" columns="*">
-            <web-view id="webView" src="~/www/index.html"></web-view>    
+            <web-view id="webView"></web-view>    
         </GridLayout>
         <Label text="Native" cssClass="heading-main"></Label>
         <GridLayout rows="50" columns="*, 70">

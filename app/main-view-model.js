@@ -1,3 +1,4 @@
+"use strict";
 var observable_1 = require('data/observable');
 /**
  * View Model for the webViewInterfaceDemo.
@@ -34,5 +35,5 @@ var WebViewInterfaceDemoVM = (function (_super) {
         configurable: true
     });
     return WebViewInterfaceDemoVM;
-})(observable_1.Observable);
+}(observable_1.Observable));
 exports.webViewInterfaceDemoVM = new WebViewInterfaceDemoVM();
