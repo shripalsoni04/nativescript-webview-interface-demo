@@ -3,20 +3,21 @@ import {WebView, LoadEventData} from 'ui/web-view';
 import {webViewInterfaceDemoVM} from './main-view-model';
 import {TextField} from 'ui/text-field';
 import {alert} from 'ui/dialogs';
+import {topmost} from 'ui/frame';
 var webViewInterfaceModule = require('nativescript-webview-interface');
 var page: Page;
 var oLangWebViewInterface;
 
 export function pageLoaded(args){
     page = <Page>args.object;
-    page.bindingContext = webViewInterfaceDemoVM; 
+    page.bindingContext = webViewInterfaceDemoVM;
 }
 
 /**
  * Initializing webview only ater page navigation.
  */
 export function navigatedTo(args){
-    setupWebViewInterface(page);
+    setupWebViewInterface(page); 
 }
 
 /**
@@ -24,7 +25,7 @@ export function navigatedTo(args){
  * this page to avoid memory leak.
  */
 export function navigatedFrom(){
-     oLangWebViewInterface.destroy();   
+     oLangWebViewInterface.destroy(); 
 }
 
 /**
@@ -33,14 +34,6 @@ export function navigatedFrom(){
 function setupWebViewInterface(page: Page){
     var webView = <WebView>page.getViewById('webView');
     oLangWebViewInterface = new webViewInterfaceModule.WebViewInterface(webView, '~/www/index.html');
-
-    // loading languages in dropdown, on load of webView.
-    webView.on(WebView.loadFinishedEvent, (args: LoadEventData) => {
-        if (!args.error) {
-            loadLanguagesInWebView();
-        }
-    });
-
     listenLangWebViewEvents();
 }
 
@@ -58,6 +51,11 @@ function listenLangWebViewEvents(){
     // handles language selectionChange event.
     oLangWebViewInterface.on('languageSelection', (selectedLanguage) => {
         webViewInterfaceDemoVM.selectedLanguage = selectedLanguage;
+    });
+
+    // loading languages in dropdown, on load of webView content.
+    oLangWebViewInterface.on('onload', () => {
+        loadLanguagesInWebView();
     });
 }
 
@@ -86,4 +84,11 @@ export function getSelectedLanguageDeferred(){
    oLangWebViewInterface.callJSFunction('getSelectedLanguageDeferred', null, (oSelectedLang) => {
         alert(`Deferred Selected Language is ${oSelectedLang.text}`);
     });     
+}
+
+/**
+ * Navigates to second page.
+ */
+export function goToPage2(){
+    topmost().navigate('page2');
 }

@@ -2,15 +2,15 @@
   "nativescript": {
     "id": "org.nativescript.webviewinterfacedemo",
     "tns-android": {
-      "version": "2.1.1"
+      "version": "2.3.0"
     },
     "tns-ios": {
-      "version": "2.2.1"
+      "version": "2.3.0"
     }
   },
   "dependencies": {
-    "nativescript-webview-interface": "^1.3.2",
-    "tns-core-modules": "^2.1.0"
+    "nativescript-webview-interface": "^1.3.4",
+    "tns-core-modules": "^2.3.0"
   },
   "devDependencies": {
     "babel-traverse": "6.13.0",

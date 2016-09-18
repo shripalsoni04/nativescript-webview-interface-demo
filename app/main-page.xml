@@ -13,5 +13,6 @@
         <Label text="{{selectedLanguage}}" textWrap="true" style="padding: 5 0 20;"/> 
         <Button text="Selected Language" tap="getSelectedLanguage" cssClass="actionBtn" />
         <Button text="Selected Language Deferred By 2s" tap="getSelectedLanguageDeferred" cssClass="actionBtn" />
+        <Button text="Go To Page 2" tap="goToPage2" cssClass="actionBtn" />
   </StackLayout>
 </Page>

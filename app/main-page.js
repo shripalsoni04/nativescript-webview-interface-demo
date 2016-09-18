@@ -1,7 +1,7 @@
 "use strict";
-var web_view_1 = require('ui/web-view');
 var main_view_model_1 = require('./main-view-model');
 var dialogs_1 = require('ui/dialogs');
+var frame_1 = require('ui/frame');
 var webViewInterfaceModule = require('nativescript-webview-interface');
 var page;
 var oLangWebViewInterface;
@@ -31,12 +31,6 @@ exports.navigatedFrom = navigatedFrom;
 function setupWebViewInterface(page) {
     var webView = page.getViewById('webView');
     oLangWebViewInterface = new webViewInterfaceModule.WebViewInterface(webView, '~/www/index.html');
-    // loading languages in dropdown, on load of webView.
-    webView.on(web_view_1.WebView.loadFinishedEvent, function (args) {
-        if (!args.error) {
-            loadLanguagesInWebView();
-        }
-    });
     listenLangWebViewEvents();
 }
 /**
@@ -52,6 +46,10 @@ function listenLangWebViewEvents() {
     // handles language selectionChange event.
     oLangWebViewInterface.on('languageSelection', function (selectedLanguage) {
         main_view_model_1.webViewInterfaceDemoVM.selectedLanguage = selectedLanguage;
+    });
+    // loading languages in dropdown, on load of webView content.
+    oLangWebViewInterface.on('onload', function () {
+        loadLanguagesInWebView();
     });
 }
 /**
@@ -81,3 +79,10 @@ function getSelectedLanguageDeferred() {
     });
 }
 exports.getSelectedLanguageDeferred = getSelectedLanguageDeferred;
+/**
+ * Navigates to second page.
+ */
+function goToPage2() {
+    frame_1.topmost().navigate('page2');
+}
+exports.goToPage2 = goToPage2;

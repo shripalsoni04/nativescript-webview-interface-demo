@@ -48,13 +48,17 @@
     function sendSelectedValue(selectedLanguage){
         oWebViewInterface.emit('languageSelection', selectedLanguage);
     }
-    
+
     function init() {
         addNativeMsgListener();
         defineNativeInterfaceFunctions();
         
         languageDD.onchange = function(){
             sendSelectedValue(languageDD.value);
+        }
+
+        document.body.onload = function(){
+            oWebViewInterface.emit('onload');
         }
     }
 
