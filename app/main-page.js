@@ -2,7 +2,7 @@
 var main_view_model_1 = require('./main-view-model');
 var dialogs_1 = require('ui/dialogs');
 var frame_1 = require('ui/frame');
-var webViewInterfaceModule = require('nativescript-webview-interface');
+var nativescript_webview_interface_1 = require('nativescript-webview-interface');
 var page;
 var oLangWebViewInterface;
 function pageLoaded(args) {
@@ -30,7 +30,7 @@ exports.navigatedFrom = navigatedFrom;
  */
 function setupWebViewInterface(page) {
     var webView = page.getViewById('webView');
-    oLangWebViewInterface = new webViewInterfaceModule.WebViewInterface(webView, '~/www/index.html');
+    oLangWebViewInterface = new nativescript_webview_interface_1.WebViewInterface(webView, '~/www/index.html');
     listenLangWebViewEvents();
 }
 /**

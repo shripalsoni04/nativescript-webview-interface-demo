@@ -4,9 +4,9 @@ import {webViewInterfaceDemoVM} from './main-view-model';
 import {TextField} from 'ui/text-field';
 import {alert} from 'ui/dialogs';
 import {topmost} from 'ui/frame';
-var webViewInterfaceModule = require('nativescript-webview-interface');
+import { WebViewInterface } from 'nativescript-webview-interface';
 var page: Page;
-var oLangWebViewInterface;
+var oLangWebViewInterface: WebViewInterface;
 
 export function pageLoaded(args){
     page = <Page>args.object;
@@ -33,7 +33,7 @@ export function navigatedFrom(){
  */
 function setupWebViewInterface(page: Page){
     var webView = <WebView>page.getViewById('webView');
-    oLangWebViewInterface = new webViewInterfaceModule.WebViewInterface(webView, '~/www/index.html');
+    oLangWebViewInterface = new WebViewInterface(webView, '~/www/index.html');
     listenLangWebViewEvents();
 }
 
