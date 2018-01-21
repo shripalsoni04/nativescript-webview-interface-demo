@@ -2,3 +2,6 @@ node_modules
 platforms
 hooks
 lib
+app/*.js
+.DS_Store
+.vscode
