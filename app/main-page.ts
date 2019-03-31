@@ -1,9 +1,9 @@
-import {Page} from 'ui/page';
-import {WebView, LoadEventData} from 'ui/web-view';
+import {Page} from 'tns-core-modules/ui/page';
+import {WebView, LoadEventData} from 'tns-core-modules//ui/web-view';
 import {webViewInterfaceDemoVM} from './main-view-model';
-import {TextField} from 'ui/text-field';
-import {alert} from 'ui/dialogs';
-import {topmost} from 'ui/frame';
+import {TextField} from 'tns-core-modules/ui/text-field';
+import {alert} from 'tns-core-modules/ui/dialogs';
+import {topmost} from 'tns-core-modules/ui/frame';
 import { WebViewInterface } from 'nativescript-webview-interface';
 var page: Page;
 var oLangWebViewInterface: WebViewInterface;
